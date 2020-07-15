@@ -1,5 +1,6 @@
 \documentclass[a4paper,12pt]{article}
 
+% Packages
 \usepackage[margin=2.5cm]{geometry}  % For setting page margins
 \usepackage{amsmath}  % Extra math commands
 \usepackage{graphicx}  % Need to include images
@@ -12,9 +13,17 @@
 
 % This sets space between paragraphs to one line width
 \setlength{\parskip}{\baselineskip}
-
 % This sets the paragraph indentation to zero (no indents)
 \setlength\parindent{0pt}
+
+% These command definitions are handy for making in-paper comments.
+% The first command add texts in the chosen colour.
+% The second is for crossing out and replacing texts.
+\newcommand*\carla[1]{\textcolor{orange}{[Carla: {#1}]}}
+\newcommand{\carlar}[2]{\st{#1} \textcolor{orange}{#2 [Carla]}}
+\newcommand*\boom[1]{\textcolor{magenta}{[Boom: {#1}]}}
+\newcommand{\boomr}[2]{\st{#1} \textcolor{magenta}{#2 [Boom]}}
+
 
 \begin{document}
 
@@ -26,8 +35,8 @@
     {\LARGE \itshape By Ca'Boom \par}
     \vspace{6cm}
     {\Large Last Updated: \today \par}
+    \boom{Carla, do you want to make the title page pretty? :)}
     \vfill
-
 \end{titlepage}
 
 \section{Introduction}
@@ -40,20 +49,22 @@ If you have a write permission to this document on \texttt{Overleaf}, you can sy
 
 Sectional organisational of this document is TBD and will change as the document grow.
 
-\section{Handy \LaTeX Commands}
+\section{Handy Commands}
 
 \subsection{\texttt{\textbackslash paragraph}}
 \LaTeX provide seven layers of sectioning commands.
+\begin{tcolorbox}
+\begin{verbatim}
+    \part
+        \chapter
+            \section
+                \subsection
+                    \subsubsection
+                        \paragraph
+                            \subparagraph
+\end{verbatim}
+\end{tcolorbox}
 
-\begin{enumerate}
-    \item \verb|\part|
-    \item \verb|\chapter|
-    \item \verb|\section|
-    \item \verb|\subsection|
-    \item \verb|\subsubsection|
-    \item \verb|\paragraph|
-    \item \verb|\subparagraph|
-\end{enumerate}
 
 \verb|\paragraph| provides headings for paragraphs, which are not usually needed in normal writing. \textbf{However, the paragraph headings are handy for outlining your document.}
 
@@ -80,6 +91,19 @@ Cats communicate by marking trees, fence posts, or furniture with their claws or
 Domestic cats remain largely carnivorous, and have evolved a simple gut appropriate for raw meat. They also retain the rough tongue that can help them clean every last morsel from an animal bone (and groom themselves). Their diets vary with the whims of humans, however, and can be supplemented by the cat's own hunting successes.
 \end{tcolorbox}
 
+\subsection{Defining new commands for commenting}
+Often we work collaboratively on a \LaTeX document. Commenting on a PDF and editing on the \LaTeX file is an option but hard to collaborate. Writing in-line comments with different coloured texts is a better choice, but having to type formatting commands for each comment can become cumbersome. The following command definitions are handy to streamline the process. The first definied command adds texts in the chosen colour. The second is for crossing out and replacing texts.
+\begin{tcolorbox}
+\begin{verbatim}
+    \newcommand*\carla[1]{\textcolor{orange}{[Carla: {#1}]}}
+    \newcommand{\carlar}[2]{\st{#1} \textcolor{orange}{#2 [Carla]}}
+    \newcommand*\boom[1]{\textcolor{magenta}{[Boom: {#1}]}}
+    \newcommand{\boomr}[2]{\st{#1} \textcolor{magenta}{#2 [Boom]}}
+\end{verbatim}
+\end{tcolorbox}
 
+
+
+\section{Good-to-Know Packages}
 
 \end{document}
