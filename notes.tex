@@ -5,6 +5,15 @@
 \usepackage{graphicx}
 \usepackage{xcolor}
 \usepackage{soul}
+\usepackage{lipsum}
+\usepackage[utf8]{inputenc}  % Allow UTF-8 input
+\usepackage{tcolorbox}  % For making a highlighted block of texts
+
+% This sets space between paragraphs to one line width
+\setlength{\parskip}{\baselineskip}
+
+% This sets the paragraph indentation to zero (no indents)
+\setlength\parindent{0pt}
 
 \begin{document}
 
@@ -22,6 +31,35 @@
 
 \section{Introduction}
 
-This document contain various tips and tricks on LaTex.
+This document contain various tips and tricks on writing in \LaTeX.
+
+To contribute, simply add stuff :). Use \verb|\verb| to print in-line \LaTeX commands as normal texts. For section heading, use a combination of \verb|\textt| and \verb|\textbackslash| instead as \verb|\verb| will not work.
+
+If you have a write permission to this document on \texttt{Overleaf}, you can sync your updates to the \texttt{GitHub} repository directly from the \texttt{Overleaf} menu. Simply select \emph{GitHub} under \emph{Sync} to sync.
+
+Sectional organisational of this document is TBD and will change as the document grow.
+
+\section{Outlining}
+
+\subsection{\texttt{\textbackslash paragraph} command}
+\LaTeX provide seven layers of sectioning commands.
+
+\begin{enumerate}
+    \item \verb|\part|
+    \item \verb|\chapter|
+    \item \verb|\section|
+    \item \verb|\subsection|
+    \item \verb|\subsubsection|
+    \item \verb|\paragraph|
+    \item \verb|\subparagraph|
+\end{enumerate}
+
+\verb|\paragraph| provides headings for paragraphs, which are not usually needed in normal writing. However, the paragraph headings are handy for outlining your document as in an example below.
+
+\begin{tcolorbox}
+    \paragraph{heading} \lipsum[6] 
+\end{tcolorbox}
+
+
 
 \end{document}
