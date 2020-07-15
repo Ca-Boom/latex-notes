@@ -1,13 +1,14 @@
 \documentclass[a4paper,12pt]{article}
 
-\usepackage[margin=2.5cm]{geometry}
-\usepackage{amsmath}
-\usepackage{graphicx}
-\usepackage{xcolor}
-\usepackage{soul}
-\usepackage{lipsum}
+\usepackage[margin=2.5cm]{geometry}  % For setting page margins
+\usepackage{amsmath}  % Extra math commands
+\usepackage{graphicx}  % Need to include images
+\usepackage{xcolor}  % Allow use of colour texts
+\usepackage{soul}  % Add various text formatting options
+\usepackage{lipsum}  % For text dump
 \usepackage[utf8]{inputenc}  % Allow UTF-8 input
 \usepackage{tcolorbox}  % For making a highlighted block of texts
+\usepackage[colorlinks=true]{hyperref}  % For URL and hyperef links
 
 % This sets space between paragraphs to one line width
 \setlength{\parskip}{\baselineskip}
@@ -39,9 +40,9 @@ If you have a write permission to this document on \texttt{Overleaf}, you can sy
 
 Sectional organisational of this document is TBD and will change as the document grow.
 
-\section{Outlining}
+\section{Handy \LaTeX Commands}
 
-\subsection{\texttt{\textbackslash paragraph} command}
+\subsection{\texttt{\textbackslash paragraph}}
 \LaTeX provide seven layers of sectioning commands.
 
 \begin{enumerate}
@@ -54,10 +55,29 @@ Sectional organisational of this document is TBD and will change as the document
     \item \verb|\subparagraph|
 \end{enumerate}
 
-\verb|\paragraph| provides headings for paragraphs, which are not usually needed in normal writing. However, the paragraph headings are handy for outlining your document as in an example below.
+\verb|\paragraph| provides headings for paragraphs, which are not usually needed in normal writing. \textbf{However, the paragraph headings are handy for outlining your document.}
 
-\begin{tcolorbox}
-    \paragraph{heading} \lipsum[6] 
+For example\footnote{taken from \url{https://www.nationalgeographic.com/animals/mammals/d/domestic-cat/}}, say we want to write about cats, we can first outline the document using \verb|\paragraph|.
+
+\begin{tcolorbox}[parbox=false]
+    \paragraph{Relationship with Humans}
+    \paragraph{Hunting Abilities}
+    \paragraph{Communication}
+    \paragraph{Diet}
+\end{tcolorbox}
+
+Then, we fill in the contents.
+
+\begin{tcolorbox}[parbox=false]
+\emph{Felis catus} has had a very long relationship with humans. Ancient Egyptians may have first domesticated cats as early as 4,000 years ago. Plentiful rodents probably drew wild felines to human communities. The cats' skill in killing them may have first earned the affectionate attention of humans. Early Egyptians worshipped a cat goddess and even mummified their beloved pets for their journey to the next world—accompanied by mummified mice! Cultures around the world later adopted cats as their own companions.
+
+Like their wild relatives, domestic cats are natural hunters able to stalk prey and pounce with sharp claws and teeth. They are particularly effective at night, when their light-reflecting eyes allow them to see better than much of their prey. Cats also enjoy acute hearing. All cats are nimble and agile, and their long tails aid their outstanding balance. \par
+
+
+Cats communicate by marking trees, fence posts, or furniture with their claws or their waste. These scent posts are meant to inform others of a cat's home range. House cats employ a vocal repertoire that extends from a purr to a screech.
+
+
+Domestic cats remain largely carnivorous, and have evolved a simple gut appropriate for raw meat. They also retain the rough tongue that can help them clean every last morsel from an animal bone (and groom themselves). Their diets vary with the whims of humans, however, and can be supplemented by the cat's own hunting successes.
 \end{tcolorbox}
 
 
